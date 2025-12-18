@@ -11,272 +11,142 @@
         body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #e2e8f0; overflow-x: hidden; }
         .gradient-text { background: linear-gradient(to right, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .hidden-section { display: none; opacity: 0; transition: opacity 0.5s ease-in-out; }
-        .visible-section { display: block; opacity: 1; }
         .input-field { background: #1e293b; border: 1px solid #334155; color: white; transition: all 0.3s; }
         .input-field:focus { border-color: #38bdf8; outline: none; box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2); }
+        #protected-container { display: none; }
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 
-    <div id="public-landing" class="flex-grow flex flex-col items-center justify-center relative px-4">
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
+<div id="public-landing" class="flex-grow flex flex-col items-center justify-center relative px-4">
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-3xl w-full text-center space-y-8">
+        <div class="space-y-2">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white">
+                Scott R. <span class="gradient-text">Leitstein</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-400 font-light">
+                Strategic Technology Leader & Architect
+            </p>
         </div>
 
-        <div class="max-w-3xl w-full text-center space-y-8">
-            <div class="space-y-2">
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white">
-                    Scott R. <span class="gradient-text">Leitstein</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-slate-400 font-light">
-                    Strategic Technology Leader & Architect
-                </p>
+        <div class="glass-panel p-8 rounded-2xl shadow-2xl text-left">
+            <p class="text-lg leading-relaxed text-slate-300">
+                Accomplished executive bridging <span class="text-sky-400 font-semibold">business strategy</span> and <span class="text-sky-400 font-semibold">technical execution</span>.
+                Recently returned from Singapore (2022-2025) leading regional infrastructure architecture for 14 APAC markets.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-4 justify-center md:justify-start">
+                <a href="https://www.linkedin.com/in/scottleitstein" target="_blank" class="flex items-center gap-2 px-5 py-2 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-600 transition-colors">
+                    <i class="fab fa-linkedin text-blue-400"></i> LinkedIn
+                </a>
+                <a href="mailto:scott.leitstein@gmail.com" class="flex items-center gap-2 px-5 py-2 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-600 transition-colors">
+                    <i class="fas fa-envelope text-gray-400"></i> Contact
+                </a>
             </div>
+        </div>
 
-            <div class="glass-panel p-8 rounded-2xl shadow-2xl text-left">
-                <p class="text-lg leading-relaxed text-slate-300">
-                    Accomplished executive with over two decades of experience bridging the gap between <span class="text-sky-400 font-semibold">business strategy</span> and <span class="text-sky-400 font-semibold">technical execution</span>. 
-                    Proven track record in leading global teams, architecting enterprise-scale solutions, and driving digital transformation across financial services and technology sectors.
-                    <br><br>
-                    Recently returned from a strategic international assignment in Singapore (2022-2025) leading regional infrastructure architecture for 14 APAC markets.
-                </p>
-                
-                <div class="mt-6 flex flex-wrap gap-4 justify-center md:justify-start">
-                    <a href="https://www.linkedin.com/in/scottleitstein" target="_blank" class="flex items-center gap-2 px-5 py-2 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-600 transition-colors">
-                        <i class="fab fa-linkedin text-blue-400"></i>
-                        <span>LinkedIn Profile</span>
-                    </a>
-                    <a href="mailto:scott.leitstein@gmail.com" class="flex items-center gap-2 px-5 py-2 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-600 transition-colors">
-                        <i class="fas fa-envelope text-gray-400"></i>
-                        <span>Contact Me</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="max-w-md mx-auto mt-12">
-                <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-700">
-                    <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4">Restricted Access Portfolio</h3>
-                    <form id="login-form" class="space-y-4" onsubmit="handleLogin(event)">
-                        <div>
-                            <input type="password" id="password" placeholder="Enter Access Code" 
-                                class="input-field w-full px-4 py-3 rounded-lg text-center tracking-widest placeholder-slate-600">
-                        </div>
-                        <button type="submit" 
+        <div class="max-w-md mx-auto mt-12">
+            <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-700">
+                <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4">Secure Access Portfolio</h3>
+                <form id="login-form" class="space-y-4" onsubmit="handleDecryption(event)">
+                    <input type="password" id="password" placeholder="Enter Access Code"
+                           class="input-field w-full px-4 py-3 rounded-lg text-center tracking-widest placeholder-slate-600">
+                    <button type="submit"
                             class="w-full bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-bold py-3 rounded-lg transition-all transform hover:scale-[1.02]">
-                            Unlock Full Profile
-                        </button>
-                        <p id="error-msg" class="text-red-400 text-xs hidden">Access Denied. Please contact Scott for credentials.</p>
-                    </form>
-                    <p class="text-xs text-slate-600 mt-4">
-                        Secure access for hiring managers and executive recruiters. Contains detailed case studies, architectural diagrams, and technical history.
-                    </p>
-                </div>
+                        Unlock & Decrypt
+                    </button>
+                    <p id="error-msg" class="text-red-400 text-xs hidden">Access Denied: Invalid Key</p>
+                </form>
+                <p class="text-xs text-slate-600 mt-4">
+                    <i class="fas fa-lock text-slate-500"></i> Content is AES-256 encrypted.
+                </p>
             </div>
         </div>
-        
-        <footer class="absolute bottom-6 text-slate-600 text-sm">
-            &copy; 2025 Scott R. Leitstein. All rights reserved.
-        </footer>
     </div>
 
-    <div id="protected-content" class="hidden-section min-h-screen bg-slate-900">
-        
-        <nav class="sticky top-0 z-50 glass-panel border-b border-slate-700/50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between h-16">
-                    <div class="font-bold text-xl tracking-tight text-white">SRL<span class="text-sky-400">.io</span></div>
-                    <div class="hidden md:flex space-x-8">
-                        <a href="#competencies" class="text-sm hover:text-sky-400 transition-colors">Core Competencies</a>
-                        <a href="#stack" class="text-sm hover:text-sky-400 transition-colors">Tech Landscape</a>
-                        <a href="#impact" class="text-sm hover:text-sky-400 transition-colors">Impact & Scale</a>
-                        <button onclick="logout()" class="text-sm text-slate-400 hover:text-white">Lock <i class="fas fa-lock ml-1"></i></button>
-                    </div>
-                </div>
-            </div>
-        </nav>
+    <footer class="absolute bottom-6 text-slate-600 text-sm">
+        &copy; 2025 Scott R. Leitstein. All rights reserved.
+    </footer>
+</div>
 
-        <section class="py-20 px-4 text-center max-w-5xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">Versatile Leadership for <span class="gradient-text">Complex Challenges</span></h2>
-            <p class="text-slate-400 text-lg max-w-3xl mx-auto">
-                Whether scaling a startup product to enterprise levels or transforming global infrastructure for a Fortune 500 bank, I bring a unique blend of executive governance and hands-on technical depth.
-            </p>
-        </section>
+<div id="protected-container"></div>
 
-        <section id="competencies" class="py-12 bg-slate-800/50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="p-6 rounded-xl bg-slate-800 border border-slate-700 hover:border-sky-500 transition-colors">
-                        <div class="w-12 h-12 bg-sky-900/50 rounded-lg flex items-center justify-center mb-4">
-                            <i class="fas fa-chess-queen text-sky-400 text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Strategic Leadership</h3>
-                        <p class="text-slate-400 text-sm">
-                            Product vision, technology transformation, and international business operations. Managed global teams across US, India, UK, and APAC.
-                        </p>
-                    </div>
-                    <div class="p-6 rounded-xl bg-slate-800 border border-slate-700 hover:border-sky-500 transition-colors">
-                        <div class="w-12 h-12 bg-purple-900/50 rounded-lg flex items-center justify-center mb-4">
-                            <i class="fas fa-layer-group text-purple-400 text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Technical Architecture</h3>
-                        <p class="text-slate-400 text-sm">
-                            Cloud migration, hybrid solutions, and high-availability design. AWS Certified Solutions Architect (Assoc) with deep expertise in enterprise patterns.
-                        </p>
-                    </div>
-                    <div class="p-6 rounded-xl bg-slate-800 border border-slate-700 hover:border-sky-500 transition-colors">
-                        <div class="w-12 h-12 bg-green-900/50 rounded-lg flex items-center justify-center mb-4">
-                            <i class="fas fa-cogs text-green-400 text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Operational Excellence</h3>
-                        <p class="text-slate-400 text-sm">
-                            DevOps transformation, process optimization, and regulatory compliance. Proven ability to drive cost optimization and efficiency gains.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<script>
+    // =========================================================================
+    // 1. PASTE YOUR JSON FROM STEP 2 BELOW
+    // =========================================================================
 
-        <section id="stack" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-2xl font-bold text-white mb-8 border-l-4 border-sky-500 pl-4">Technology Landscape</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="space-y-2">
-                    <h4 class="text-sky-400 font-semibold uppercase text-xs tracking-wider">Cloud & Infrastructure</h4>
-                    <ul class="text-slate-300 space-y-1 text-sm">
-                        <li>AWS / Azure / Private Cloud</li>
-                        <li>Docker / Kubernetes / Containers</li>
-                        <li>Terraform / Ansible / IaC</li>
-                        <li>Virtualization (VMware/Hyper-V)</li>
-                    </ul>
-                </div>
-                <div class="space-y-2">
-                    <h4 class="text-sky-400 font-semibold uppercase text-xs tracking-wider">Development & Data</h4>
-                    <ul class="text-slate-300 space-y-1 text-sm">
-                        <li>Python / Java / C#</li>
-                        <li>Full Stack Web (React/Angular)</li>
-                        <li>Big Data (1.4B rows/day)</li>
-                        <li>SQL / NoSQL Databases</li>
-                    </ul>
-                </div>
-                <div class="space-y-2">
-                    <h4 class="text-sky-400 font-semibold uppercase text-xs tracking-wider">Process & Methodologies</h4>
-                    <ul class="text-slate-300 space-y-1 text-sm">
-                        <li>Agile / Scrum / SAFe</li>
-                        <li>CI/CD & DevOps Pipelines</li>
-                        <li>ITIL / ITSM</li>
-                        <li>Regulatory Compliance (GDPR/SOX)</li>
-                    </ul>
-                </div>
-                 <div class="space-y-2">
-                    <h4 class="text-sky-400 font-semibold uppercase text-xs tracking-wider">Business Domains</h4>
-                    <ul class="text-slate-300 space-y-1 text-sm">
-                        <li>FinTech & Banking</li>
-                        <li>Enterprise Infrastructure</li>
-                        <li>Product Management</li>
-                        <li>Regional Governance (APAC)</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+    const encryptedStore = {"salt":"LGr1BDWoEynb8ohtDQehow==","iv":"9N9p5v1OVdnjtWZE","data":"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"};
 
-        <section id="impact" class="py-20 bg-slate-800/30 border-t border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between mb-12">
-                    <h3 class="text-3xl font-bold text-white">Impact & Achievements</h3>
-                    <span class="bg-sky-500/20 text-sky-300 text-xs px-3 py-1 rounded-full border border-sky-500/30">Select Highlights</span>
-                </div>
+    // Example: const encryptedStore = {"salt":"...","iv":"...","data":"..."};
 
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="glass-panel p-8 rounded-xl relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                            <i class="fas fa-chart-line text-9xl text-white"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-white mb-2">Enterprise Product Scaling</h4>
-                        <p class="text-slate-400 text-sm mb-4">
-                            Launched and scaled a critical enterprise capacity analytics product from zero to firm-wide adoption.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Product Leadership</span>
-                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Scale</span>
-                        </div>
-                        <ul class="text-sm text-slate-300 list-disc list-inside space-y-1">
-                            <li>Scaled to **1,400+ users** globally.</li>
-                            <li>Processed **1.4 billion rows of data daily**.</li>
-                            <li>Achieved **40% efficiency gains** via automation.</li>
-                        </ul>
-                    </div>
 
-                    <div class="glass-panel p-8 rounded-xl relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                            <i class="fas fa-globe text-9xl text-white"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-white mb-2">Global Infrastructure Governance</h4>
-                        <p class="text-slate-400 text-sm mb-4">
-                            Led infrastructure architecture and compliance for the Asia-Pacific region during a 3-year international assignment.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">International Leadership</span>
-                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Compliance</span>
-                        </div>
-                        <ul class="text-sm text-slate-300 list-disc list-inside space-y-1">
-                            <li>Managed architecture for **14 countries**.</li>
-                            <li>Delivered critical **data localization** programs.</li>
-                            <li> oversaw **100+ product compliance analyses**.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+    // =========================================================================
+    // DECRYPTION LOGIC
+    // =========================================================================
 
-        <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-2xl font-bold text-white mb-8 border-l-4 border-purple-500 pl-4">Education & Certifications</h3>
-            <div class="flex flex-col md:flex-row gap-8">
-                <div class="flex-1 bg-slate-800/50 p-6 rounded-xl">
-                    <h4 class="text-lg font-bold text-white">Georgia Institute of Technology</h4>
-                    <p class="text-sky-400">Master of Science in Computer Science</p>
-                    <p class="text-slate-500 text-sm mt-1">Specialization: Interactive Intelligence (AI)</p>
-                </div>
-                <div class="flex-1 bg-slate-800/50 p-6 rounded-xl">
-                    <h4 class="text-lg font-bold text-white">AWS Certified</h4>
-                    <p class="text-sky-400">Solutions Architect – Associate</p>
-                </div>
-            </div>
-        </section>
+    async function handleDecryption(e) {
+        e.preventDefault();
+        const password = document.getElementById('password').value;
+        const errorMsg = document.getElementById('error-msg');
+        const submitBtn = e.target.querySelector('button');
 
-        <footer class="bg-slate-900 border-t border-slate-800 py-12 text-center">
-            <p class="text-slate-500 mb-4">
-                Detailed Resume & References Available Upon Request
-            </p>
-            <a href="mailto:scott.leitstein@gmail.com" class="text-white hover:text-sky-400 text-lg font-semibold transition-colors">
-                scott.leitstein@gmail.com
-            </a>
-        </footer>
-    </div>
-
-    <script>
-        function handleLogin(e) {
-            e.preventDefault();
-            const password = document.getElementById('password').value;
-            const errorMsg = document.getElementById('error-msg');
-            
-            // DEMO PASSWORD: "demo" or "hiring"
-            // In production, handle this server-side or via a secure auth provider
-            if (password.toLowerCase() === 'demo' || password.toLowerCase() === 'hiring') {
-                document.getElementById('public-landing').style.display = 'none';
-                const protectedContent = document.getElementById('protected-content');
-                protectedContent.classList.remove('hidden-section');
-                protectedContent.classList.add('visible-section');
-                window.scrollTo(0,0);
-            } else {
-                errorMsg.classList.remove('hidden');
-                document.getElementById('password').classList.add('border-red-500');
-            }
+        if (!encryptedStore) {
+            alert("Setup Error: No encrypted content found. Please edit index.html and paste the JSON.");
+            return;
         }
 
-        function logout() {
-            location.reload();
+        submitBtn.innerText = "Decrypting...";
+
+        try {
+            // Decode Base64
+            const salt = Uint8Array.from(atob(encryptedStore.salt), c => c.charCodeAt(0));
+            const iv = Uint8Array.from(atob(encryptedStore.iv), c => c.charCodeAt(0));
+            const data = Uint8Array.from(atob(encryptedStore.data), c => c.charCodeAt(0));
+
+            // Derive Key
+            const enc = new TextEncoder();
+            const keyMaterial = await crypto.subtle.importKey("raw", enc.encode(password), "PBKDF2", false, ["deriveKey"]);
+            const key = await crypto.subtle.deriveKey(
+                { name: "PBKDF2", salt: salt, iterations: 100000, hash: "SHA-256" },
+                keyMaterial,
+                { name: "AES-GCM", length: 256 },
+                false,
+                ["decrypt"]
+            );
+
+            // Decrypt
+            const decryptedBuffer = await crypto.subtle.decrypt(
+                { name: "AES-GCM", iv: iv },
+                key,
+                data
+            );
+
+            // Inject Content
+            const dec = new TextDecoder();
+            const cleanHTML = dec.decode(decryptedBuffer);
+
+            document.getElementById('protected-container').innerHTML = cleanHTML;
+            document.getElementById('public-landing').style.display = 'none';
+            document.getElementById('protected-container').style.display = 'block';
+            window.scrollTo(0,0);
+
+        } catch (err) {
+            console.error(err);
+            errorMsg.classList.remove('hidden');
+            submitBtn.innerText = "Unlock & Decrypt";
+            document.getElementById('password').value = "";
+            document.getElementById('password').focus();
         }
-    </script>
+    }
+
+    function logout() {
+        location.reload();
+    }
+</script>
 </body>
 </html>
