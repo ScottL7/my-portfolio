@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scott R. Leitstein - Leadership Case Study</title>
+  <style>
+    :root {
+      --primary-color: #004c3f; /* Deep Green/Teal - Professional & nods to Shopify's palette */
+      --accent-color: #95bf47; /* Energetic Green */
+      --text-dark: #212b36;
+      --text-light: #637381;
+      --bg-light: #f6f6f7;
+      --white: #ffffff;
+      --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    }
+
+    body {
+      font-family: var(--font-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-light);
+    }
+
+    /* Header / Navigation */
+    header {
+      background-color: var(--white);
+      border-bottom: 1px solid #e1e3e5;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand a {
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: var(--text-dark);
+      letter-spacing: -0.5px;
+    }
+
+    .brand span {
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Content */
+    .hero {
+      background-color: var(--white);
+      padding: 4rem 0 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+      letter-spacing: -1px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .content-card {
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 3rem;
+      margin-top: -30px;
+      margin-bottom: 3rem;
+      border-top: 4px solid var(--primary-color);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: var(--text-dark);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    /* Highlights Box */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+
+    .stat-box {
+      background: var(--bg-light);
+      padding: 1.5rem;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Quote / Retrospective Section */
+    .retrospective {
+      background-color: #eefcf6;
+      border-left: 4px solid var(--accent-color);
+      padding: 1.5rem;
+      border-radius: 0 4px 4px 0;
+      margin: 2rem 0;
+    }
+
+    .retrospective h3 {
+      margin-top: 0;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 0;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    /* Mobile Adjustments */
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8rem; }
+      .content-card { padding: 1.5rem; }
+      .stats-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav-flex">
+    <div class="brand">
+      <a href="https://www.leitstein.com/scott">Scott R. Leitstein <span>/ Engineering Leadership</span></a>
+    </div>
+    <div class="nav-links">
+      <a href="https://www.linkedin.com/in/scottleitstein" target="_blank">LinkedIn</a>
+      <a href="mailto:scott.leitstein@gmail.com">Contact</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="container">
+    <h1>Building "Capalytics" at Scale</h1>
+    <p class="subtitle">A case study in unifying enterprise capacity management, shifting engineering culture, and architecting for 1.4 billion daily records.</p>
+  </div>
+</div>
+
+<div class="container">
+  <article class="content-card">
+
+    <h2>The Challenge: Enterprise Fragmentation</h2>
+    <p>
+      At JPMorgan Chase, infrastructure data was siloed. I was tasked with solving a massive data fragmentation problem where 7 global Lines of Business (LOBs) used different tools and metrics for capacity planning.
+    </p>
+    <p>
+      The primary strategic objective was to <strong>standardize the capacity management approach, tooling, and reporting</strong> across the enterprise. The goal was to establish a "single source of truth" so that reporting up to the Executive CIO was consistent, accurate, and comparable across the board.
+    </p>
+
+    <div class="stats-grid">
+      <div class="stat-box">
+        <span class="stat-number">1.4 Billion</span>
+        <span class="stat-label">Rows of Data / Day</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">1,400+</span>
+        <span class="stat-label">Active Users</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">40%</span>
+        <span class="stat-label">Efficiency Gain</span>
+      </div>
+    </div>
+
+    <h2>My Role: Product & Technical Leadership</h2>
+    <p>
+      I served as the <strong>Global Product Owner and Lead Architect</strong>, managing a distributed team of 21 engineers and SREs across the US, India, and the UK. My leadership focused on two parallel tracks:
+    </p>
+    <ul>
+      <li><strong>Technical Architecture:</strong> I architected the system to ingest telemetry from diverse sources (Verum, Satori, SAN arrays) into a unified view. I designed the system for high availability, configuring it to persist independently between two data centers with automated quarterly failovers.</li>
+      <li><strong>Cultural Transformation:</strong> I built the SRE and DevOps teams from the ground up, driving a shift from Waterfall to Agile with 2-week sprints and mature CI/CD pipelines.</li>
+    </ul>
+
+    <h2>The Outcome</h2>
+    <p>
+      The project successfully replaced a rigid legacy vendor solution (CA Capacity Manager), eliminating significant licensing costs and technical debt. Key wins included:
+    </p>
+    <ul>
+      <li><strong>Standardization:</strong> We established Capalytics as the standard tool across all LOBs, delivering 25+ custom views to support unified adoption.</li>
+      <li><strong>Automation:</strong> By automating data correlation, we achieved a <strong>40% time reduction</strong> in Resiliency Enhanced Testing.</li>
+      <li><strong>Scale:</strong> The platform achieved a "Mature" rating in the firm’s strict Application Tollgate Process.</li>
+    </ul>
+
+    <div class="retrospective">
+      <h3>Retrospective: What I Would Change</h3>
+      <p>
+        If I were to execute this today, I would enforce an <strong>"API-First" strategy</strong> from Day 1. Initially, we focused on building custom UI views to secure stakeholder buy-in. While this achieved our standardization goals, it created a bottleneck where my core team had to manually build every new visualization.
+      </p>
+      <p>
+        Midway through, I pivoted the roadmap to establish standardized API extensions. Had I prioritized this "platform" mindset earlier, we could have unlocked internal developer velocity faster, allowing LOBs to build their own tools on top of our data engine immediately.
+      </p>
+    </div>
+
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Scott R. Leitstein. <a href="https://www.leitstein.com/scott">Back to Main Profile</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
